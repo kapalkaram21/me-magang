@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Formulir pengajuan dokumen kependudukan"
+    />
+    <title>Formulir Pengajuan - Disdukcapil Minahasa</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/form.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <img
+          src="./assets/logo.png"
+          width="100"
+          alt="Logo Disdukcapil Minahasa"
+        />
+        <div class="header-text">
+          <h1>FORMULIR PENGAJUAN DOKUMEN</h1>
+          <p>Disdukcapil Kabupaten Minahasa</p>
+        </div>
+      </div>
+
+      <nav aria-label="Navigasi utama">
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="form.html">Form Pengajuan</a></li>
+        </ul>
+      </nav>
+
+      <button
+        id="mode-toggle"
+        class="mode-toggle"
+        aria-label="Toggle dark mode"
+      >
+        <span class="mode-icon"></span>
+        <span class="mode-text">Mode Gelap</span>
+      </button>
+    </header>
+
+    <main>
+      <section aria-labelledby="form-pengajuan" class="form-section">
+        <h2 id="form-pengajuan">Formulir Pengajuan Dokumen</h2>
+        <p class="form-description">
+          Silakan isi formulir berikut untuk mengajukan dokumen kependudukan.
+          Pastikan data yang Anda isi benar dan lengkap.
+        </p>
+
+        <form id="pengajuanForm" novalidate>
+          <div class="form-group">
+            <label for="nama">Nama Lengkap:</label>
+            <input
+              type="text"
+              id="nama"
+              name="nama"
+              required
+              aria-required="true"
+              placeholder="Masukkan nama lengkap Akte"
+            />
+            <span class="error-message" id="nama-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="nik">NIK (16 digit):</label>
+            <input
+              type="text"
+              id="nik"
+              name="nik"
+              required
+              aria-required="true"
+              pattern="[0-9]{16}"
+              title="NIK harus 16 digit angka"
+              placeholder="Masukkan 16 digit NIK Anda"
+              maxlength="16"
+            />
+            <span class="error-message" id="nik-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="layanan">Jenis Layanan:</label>
+            <select id="layanan" name="layanan" required aria-required="true">
+              <option value="" disabled selected>-- Pilih Layanan --</option>
+              <option value="KTP">KTP Elektronik</option>
+              <option value="KK">Kartu Keluarga</option>
+              <option value="Akta Kelahiran">Akta Kelahiran</option>
+              <option value="Akta Kematian">Akta Kematian</option>
+            </select>
+            <span class="error-message" id="layanan-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="alasan">Alasan Pengajuan:</label>
+            <textarea
+              id="alasan"
+              name="alasan"
+              rows="4"
+              required
+              aria-required="true"
+              placeholder="Jelaskan alasan pengajuan dokumen ini"
+            ></textarea>
+            <span class="error-message" id="alasan-error"></span>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="submit-btn">Ajukan Permohonan</button>
+            <button type="reset" class="reset-btn">Reset Formulir</button>
+          </div>
+        </form>
+
+        <div id="hasil" class="result-container" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <p>&copy; 2025 Disdukcapil Kabupaten Minahasa</p>
+        <p class="footer-info">Layanan resmi Pemerintah Kabupaten Minahasa</p>
+      </div>
+    </footer>
+  </body>
+</html>
